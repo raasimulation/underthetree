@@ -65,12 +65,14 @@
                 const seaOverlay = document.getElementById("sea-overlay");
                 const videos = document.querySelectorAll(".media-container video");
                 seaOverlay.style.display = "block";
+                
 
                 // Fade in media elements
                 fadeInMedia();
 
                 // Start playing music
                 document.getElementById("music").play();
+                document.body.style.zoom = "90%";
 
 
                 videos.forEach(video => {
