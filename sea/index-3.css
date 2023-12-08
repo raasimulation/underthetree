@@ -1,0 +1,168 @@
+#sea-overlay {
+    margin: 0;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.8); /* Overlay background color with transparency */
+    display: none;
+    z-index: 1000; /* Adjust the z-index as needed */
+}
+
+.media-container {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#music {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    display: none;
+    z-index: 1;
+}
+
+#subtitle-container {
+    position: absolute;
+    left: 100px;
+    top: 950px;
+    z-index: 30;
+    color: yellow;
+    font-size: 48px;
+    text-shadow: 1.41px 1.41px black, 2px 0 black, 1.41px -1.41px black,
+    0 -2px black, -1.41px -1.41px black, -2px 0 black,
+   -1.41px 1.41px black, 0 2px black;
+}
+
+.sea-video {
+    position: absolute;
+    width: 100vw;
+    height: 35vh;
+    top: 700px;
+    z-index: -9;
+    object-fit: cover;
+}
+
+.night-video {
+    position: absolute;
+    width: 100vw; /* 100% of the viewport width */
+    height: 50vh;
+    top: 0;
+    left: 0;
+    object-fit: cover;
+    z-index: -9;
+}
+
+.moon-image {
+    position: absolute;
+    width: 100px;
+    height: 100px;
+    top: 40px;
+    left: 120px;
+    object-fit: cover;
+    z-index: 4;
+}
+
+.person-image {
+    position: absolute;
+    width: 200px;
+    height: 200px;
+    top: 600px;
+    left: 200px;
+    object-fit: cover;
+    z-index: 4;
+}
+
+.rocks-video {
+    position: absolute;
+    width: 200px;
+    height: 200px;
+    top: 720px;
+    left: 200px;
+    object-fit: cover;
+    z-index: 3;
+}
+
+html {
+    height: 100%;
+    overflow: hidden;
+    margin: 0;
+    padding: 0;
+    object-fit: cover;
+}
+
+body {
+    background-image: url("../home.png");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 100%;
+}
+
+.pear {
+    text-shadow: 1.41px 1.41px black, 2px 0 black, 1.41px -1.41px black,
+    0 -2px black, -1.41px -1.41px black, -2px 0 black,
+   -1.41px 1.41px black, 0 2px black;
+    font-family: Tahoma;
+    font-size: 20px;
+    border-radius: 4px;
+    padding: 12px;
+    position: absolute;
+    left: 30%;
+    top: 20%;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.mulberry {
+    text-shadow: 1.41px 1.41px black, 2px 0 black, 1.41px -1.41px black,
+    0 -2px black, -1.41px -1.41px black, -2px 0 black,
+   -1.41px 1.41px black, 0 2px black;
+    font-family: Tahoma;
+    font-size: 20px;
+    border-radius: 4px;
+    padding: 12px;
+    position: absolute;
+    left: 25%;
+    top: 60%;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.sea {
+    text-shadow: 1.41px 1.41px black, 2px 0 black, 1.41px -1.41px black,
+    0 -2px black, -1.41px -1.41px black, -2px 0 black,
+   -1.41px 1.41px black, 0 2px black;
+    font-family: Tahoma;
+    font-size: 22px;
+    border-radius: 4px;
+    padding: 12px;
+    position: absolute;
+    right: 20%;
+    top: 80%;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.sea:hover {
+    border: white  2px dashed;
+}
+
+.mulberry:hover {
+    border: white  2px dashed;
+}
+
+.pear:hover {
+    border: white  2px dashed;
+}

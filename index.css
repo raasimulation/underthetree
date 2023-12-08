@@ -1,0 +1,76 @@
+html {
+    height: 100%;
+    overflow: hidden;
+    margin: 0;
+    padding: 0;
+}
+body {
+    background-image: url("home.png");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 100%;
+}
+
+.pear {
+    text-shadow: 1.41px 1.41px black, 2px 0 black, 1.41px -1.41px black,
+    0 -2px black, -1.41px -1.41px black, -2px 0 black,
+   -1.41px 1.41px black, 0 2px black;
+    font-family: Tahoma;
+    font-size: 20px;
+    border-radius: 4px;
+    padding: 12px;
+    position: absolute;
+    left: 30%;
+    top: 20%;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.mulberry {
+    text-shadow: 1.41px 1.41px black, 2px 0 black, 1.41px -1.41px black,
+    0 -2px black, -1.41px -1.41px black, -2px 0 black,
+   -1.41px 1.41px black, 0 2px black;
+    font-family: Tahoma;
+    font-size: 20px;
+    border-radius: 4px;
+    padding: 12px;
+    position: absolute;
+    left: 25%;
+    top: 60%;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.sea {
+    text-shadow: 1.41px 1.41px black, 2px 0 black, 1.41px -1.41px black,
+    0 -2px black, -1.41px -1.41px black, -2px 0 black,
+   -1.41px 1.41px black, 0 2px black;
+    font-family: Tahoma;
+    font-size: 22px;
+    border-radius: 4px;
+    padding: 12px;
+    position: absolute;
+    right: 20%;
+    top: 80%;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.sea:hover {
+    border: white  2px dashed;
+}
+
+.mulberry:hover {
+    border: white  2px dashed;
+}
+
+.pear:hover {
+    border: white  2px dashed;
+}

@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>where home would be?</title>
+    <link rel="stylesheet" href="pear.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.5.11/p5.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.5.11/addons/p5.dom.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.5.11/addons/p5.sound.min.js"></script>
+</head>
+
+<body>
+    <div class="wrapper">
+        <div class="pear">
+            <div class="item1">
+                <div class="line1"> I tell the pear tree that I cannot visit her, She understands<img
+                        src="https://www.greenvilleonline.com/gcdn/-mm-/041842eb9472e83f1add1b882723b01fcffe6036/c=0-118-1040-706/local/-/media/2016/03/28/CarolinaGroup/Greenville/635947689282670579-Bradford-Pear-trees---Copy---Copy.jpg?width=660&height=374&fit=crop&format=pjpg&auto=webp"
+                        width="700">
+                </div>
+            </div>
+            <div class="item1">
+                <div class="line1"> I tell the pear tree that I won’t be coming back, She understands<img
+                        src="qafqaz.mp4" width="700">
+                </div>
+            </div>
+            <div class="item1">
+                <div class="line1"> I tell the pear tree that I have changed, She (will) understands<img
+                        src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/80/Pear%27s_morphology.svg/2560px-Pear%27s_morphology.svg.png"
+                        width="500">
+                </div>
+            </div>
+            <div class="item1">
+                <div class="line1"> I show the pear tree how I have changed, She looks and understands<img
+                        src="https://botanistinthekitchen.files.wordpress.com/2013/08/pearfigure-001.jpg" width="700">
+                </div>
+            </div>
+            <div class="item1">
+                <div class="line1"> I tell the pear tree how I like tea, She understands and gives me some<img
+                        src="https://www.aznews.az/storage/photos/cay1.jpg" width="700">
+                </div>
+            </div>
+            <div class="item1">
+                <div class="line1"> I tell the pear tree that I don’t like myself, She understands and drops a fruit<img
+                        src="https://previews.123rf.com/images/sasaperic/sasaperic2005/sasaperic200500091/146333042-pear-fell-from-the-tree-on-the-orchard-ground.jpg"
+                        width="700">
+                </div>
+            </div>
+            <div class="item1">
+                <div class="line1">I tell the pear tree the place I was at today, She understands, but she doesn’t
+                    recognize<img
+                        src="https://upload.wikimedia.org/wikipedia/commons/0/08/Night_bulvar%2C_Baku%2C_2010_%282%29.jpg"
+                        width="700">
+                </div>
+            </div>
+            <div class="item1">
+                <div class="line1"> I tell the pear tree that I had mulberries today, She laughs, and she smiles with
+                    vigor<img src="laugh.mp4" width="700">
+                </div>
+            </div>
+            <div class="item1">
+                <div class="line1"> I tell the pear tree that I want to go home now, She laughs again, she won’t let me
+                    go
+                    home<img src="xoyski.png" width="700">
+                </div>
+            </div>
+            <div class="item1">
+                <div class="line1"> I tell the pear tree that I feel cold at sea, She knows, but she warned me about
+                    it<img
+                        src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b5/ISS-44_Night_view_of_the_Caspian_Sea.jpg/2560px-ISS-44_Night_view_of_the_Caspian_Sea.jpg"
+                        width="800">
+                </div>
+            </div>
+            <div class="item1">
+                <div class="line1"> I tell the pear tree that I want to approach, She understands but she can’t do
+                    anything<img src="myself.jpg" width="500">
+                </div>
+            </div>
+            <div class="item1">
+                <div class="line1"> I tell the pear tree that I want to approach myself, but she can’t do anything
+                    <img src="myself.gif" width="270">
+                </div>
+            </div>
+            <div class="item1">
+                <div class="line1"> I tell the pear tree that I want to see myself, but she won’t <a
+                        href="../index-2.html" id="diary-hover">reveal</a>
+                    <p id="diary-entry1">i like pears, my grandma also likes pears, she knows that they are sweet and
+                        she gave me one each time we would go out at 9 in the morning on saturday. surprisingly, no one
+                        would be out this early, near the trees walking and jumping and revolving around from all that
+                        pear sugar. i hope you also have your pear tree where you can stay and be sweet. see u!!! <3 :D
+                            </p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+        let penSize = 10;
+        let penState = 0;
+
+        let targetText = "i like pears, my grandma also likes pears, she knows that they are sweet and she gave me one each time we would go out at 9 in the morning on saturday. surprisingly, no one would be out this early, near the trees walking and jumping and revolving around from all that pear sugar. i hope you also have your pear tree where you can stay and be sweet. see u!!! <3 :D ";
+        let typedText = "";
+        let typingSpeed = 50;
+        let typingInProgress = false;
+
+        let birdSound;
+
+        function preload() {
+            birdSound = loadSound('/pear/birds.mp3');
+        }
+        function setup() {
+            canvasHeight = document.body.scrollHeight;
+            createCanvas(windowWidth, canvasHeight);
+            birdSound.play();
+            background(245, 245, 240);
+            stroke('#222222');
+            strokeWeight(4);
+            document.getElementById('diary-hover').addEventListener('mouseover', startTyping, { once: true });
+        }
+        function draw() {
+            if (penState == 0) {
+                line(mouseX, mouseY, pmouseX, pmouseY);
+            }
+
+            if (penState == 1) {
+                ellipse(mouseX, mouseY, 10, 10);
+            }
+
+            if (penState == 2) {
+                line(mouseX - 5, mouseY - 5, mouseX + 5, mouseY + 5);
+                line(mouseX + 5, mouseY - 5, mouseX - 5, mouseY + 5);
+            }
+        }
+
+        function autoScroll() {
+            if (window.scrollY + window.innerHeight < document.body.scrollHeight) {
+                window.scrollBy(0, 4);
+                setTimeout(autoScroll, 30);
+            }
+        }
+
+
+        setTimeout(() => {
+            autoScroll();
+            penState = 0;
+        }, 300);
+
+        function startTyping() {
+            document.getElementById('diary-entry1').style.visibility = 'visible';
+            stroke('#a8325c');
+
+            if (!typingInProgress) {
+                typingInProgress = true;
+                typeNextCharacter(0);
+            }
+        }
+
+        function typeNextCharacter(index) {
+            if (index < targetText.length) {
+                typedText += targetText.charAt(index);
+                document.getElementById('diary-entry1').innerHTML = typedText;
+                setTimeout(() => {
+                    typeNextCharacter(index + 1);
+                }, typingSpeed);
+            } else {
+                typingInProgress = false;
+            }
+        }
+    </script>
+</body>
+
+</html>

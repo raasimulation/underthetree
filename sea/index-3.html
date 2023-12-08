@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>mənə dəniz verin</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    <link rel="stylesheet" href="index-3.css">
+
+</head>
+
+<body>
+    <a href="../pear/pear.html">
+        <div class="pear"><img src="../pear-folder.png" width="90">pear tree</div>
+    </a><br>
+    <a href="../mulberry/index.html">
+        <div class="mulberry"><img src="../mulberry-folder.png" width="90">mulberry tree</div>
+    </a>
+    <div class="sea" onclick="showSeaOverlay()"><img src="../sea-folder.png" width="90">sea</div>
+
+    <div id="sea-overlay">
+        <audio id="music" controls>
+            <source src="../sea/baku-night.mp3" type="audio/mp3">
+        </audio>
+
+        <div id="subtitle-container"></div>
+
+        <div class="media-container">
+
+
+
+            <div class="sea-video"><video width="100%" loop muted>
+                    <source src="caspian-sea.mp4" type="video/mp4">
+                </video></div>
+
+            <div class="night-video"><video width="100%" muted>
+                    <source src="baku-night-1.mp4" type="video/mp4">
+                </video></div>
+
+            <div class="moon-image"><img src="moon.png" width="150" height="150"></div>
+
+            <div class="person-image"><img src="person.png" width="230" height="230"></div>
+
+            <div class="rocks-video"><video width="200" height="200" loop>
+                    <source src="rocks.mp4" type="video/mp4">
+                </video></div>
+
+        </div>
+        <script>
+            var subtitles = [
+                { text: "I tell the sea I need her, she opens her shores", duration: 8000 },
+                { text: "I tell the sea I am tired, she nods with a tide from the moon", duration: 8000 },
+                { text: "Xəzri and Gilavar, hand in hand call my name", duration: 8000 },
+                { text: "The sea invites me, I take her trembling hand", duration: 8000 },
+                { text: "The sea makes a pillow from a rock, I put my head on it", duration: 8000 },
+                { text: "The sea puts a wave on my chest, I close my eyes", duration: 8000 },
+                { text: "The sea sings her lullaby, the murmuring waves put me to sleep again", duration: 8000 },
+                { text: "I let her remind me of the softness within my trees, and I fall asleep", duration: 8000 },
+            ];
+
+            function showSeaOverlay() {
+                // Show overlay
+                const seaOverlay = document.getElementById("sea-overlay");
+                const videos = document.querySelectorAll(".media-container video");
+                seaOverlay.style.display = "block";
+
+                // Fade in media elements
+                fadeInMedia();
+
+                // Start playing music
+                document.getElementById("music").play();
+
+
+                videos.forEach(video => {
+                    video.play();
+                });
+
+                // Fade out media elements after the music ends
+                setTimeout(() => {
+                    fadeOutMedia();
+                }, document.getElementById("music").duration * 1000);
+
+                music.addEventListener('ended', function () {
+                    fadeOutMedia();
+                    setTimeout(() => {
+                        window.location.href = '../index.html'; // Replace with your actual destination file
+                    }, 1000); // Adjust the delay as needed
+                });
+            }
+
+            function displaySubtitle(index) {
+                // Display the current subtitle
+                $('#subtitle-container').text(subtitles[index].text);
+
+                // Set a timeout for the next subtitle
+                setTimeout(function () {
+                    // Clear the subtitle after the specified duration
+                    $('#subtitle-container').text('');
+
+                    // Move to the next subtitle (if available)
+                    if (index < subtitles.length - 1) {
+                        displaySubtitle(index + 1);
+                    }
+                }, subtitles[index].duration);
+            }
+
+            displaySubtitle(0);
+
+            function fadeInMedia() {
+                const mediaElements = document.querySelectorAll(".media-container > *");
+
+                mediaElements.forEach((element, index) => {
+                    setTimeout(() => {
+                        element.style.transition = "opacity 5s";
+                        element.style.opacity = 1;
+                    }, index * 1000);
+                });
+            }
+
+            function fadeOutMedia() {
+                const mediaElements = document.querySelectorAll(".media-container > *");
+
+                mediaElements.forEach((element, index) => {
+                    setTimeout(() => {
+                        element.style.transition = "opacity 5s";
+                        element.style.opacity = 0;
+                    }, index * 1000);
+                });
+
+                // Hide overlay after the transition ends
+                setTimeout(() => {
+                    document.getElementById("sea-overlay").style.display = "none";
+                }, mediaElements.length * 1000);
+            }
+        </script>
+</body>
+
+</html>
