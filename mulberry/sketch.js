@@ -33,7 +33,7 @@ let angleIncrement;
 let soundFile;
 let showQuestion = false;
 let typingText =
-  "do you even like mulberry? it's like this gooey thing that people eat...but idk why it's still sweet and it's taking so much space everywhere.. :d i wish it didn't though, our old house at narimanov station had so much of these that i kinda took them for granted as time went on, but i do not miss the texture at all...what about you does your sense allow you to like the mulberry tree or are you playing under the leaves of a fig tree somewhere with a tree tongue and a stem heart....xd ";
+  "there’s something terribly pulling about mulberry trees. how their fruit makes people stick, makes people stay. how my mom’s voice makes the branches wave, how her hands gather fresh calm mulberries. our old house at narimanov station would have a range of mulberry trees, where every time i would pass it would take twice the amount of time because how sticky everything was. but i would get home, but i wouldn’t get out. do your stems belong to a tree? does your heart belong to your stem?";
 let typedText = "";
 let typingSpeed = 10;
 let font;
